@@ -114,9 +114,9 @@ def load_artifacts():
         },
         "scaler": joblib.load("models/scaler.pkl"),
         "features": joblib.load("models/feature_columns.pkl"),
-        "merchant_list": joblib.load("models/merchant_list.pkl"),
-        "category_list": joblib.load("models/category_list.pkl"),
-        "job_list": joblib.load("models/job_list.pkl")
+        # "merchant_list": joblib.load("models/merchant_list.pkl"),
+        # "category_list": joblib.load("models/category_list.pkl"),
+        # "job_list": joblib.load("models/job_list.pkl")
     }
 
 
@@ -131,9 +131,9 @@ artifacts = load_artifacts()
 models = artifacts["models"]
 scaler = artifacts["scaler"]
 features = artifacts["features"]
-merchant_list = artifacts["merchant_list"]
-category_list = artifacts["category_list"]
-job_list = artifacts["job_list"]
+# merchant_list = artifacts["merchant_list"]
+# category_list = artifacts["category_list"]
+# job_list = artifacts["job_list"]
 
 # === App Title ===
 st.set_page_config(page_title="Fraud Detection App", layout="centered")
