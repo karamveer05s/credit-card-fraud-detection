@@ -103,6 +103,9 @@ import pandas as pd
 import joblib
 import numpy as np
 
+# === Set page config (this MUST come early) ===
+st.set_page_config(page_title="Fraud Detection App", layout="centered")
+
 # === Load Model Artifacts ===
 @st.cache_data
 def load_artifacts():
@@ -136,7 +139,7 @@ features = artifacts["features"]
 # job_list = artifacts["job_list"]
 
 # === App Title ===
-st.set_page_config(page_title="Fraud Detection App", layout="centered")
+#st.set_page_config(page_title="Fraud Detection App", layout="centered")
 st.title("💳 Credit Card Fraud Detection")
 st.markdown("Please fill in transaction details to check if it's fraudulent.")
 
