@@ -212,7 +212,7 @@ import numpy as np
 # === Load once using Streamlit cache ===
 @st.cache_resource
 def load_model():
-    model = joblib.load("../models/final_xgboost_model.pkl")
+    model = joblib.load("../models/xgboost_model.pkl")
     scaler = joblib.load("../models/scaler.pkl")
     features = joblib.load("../models/feature_columns.pkl")
     return model, scaler, features
