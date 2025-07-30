@@ -136,7 +136,7 @@ NGBOOST_PATH = os.path.join(BASE_DIR, "models", "xgboost.pkl")
 
 @st.cache_resource
 def load_model():
-    model = joblib.load("models/xgboost.pkl")
+    models = joblib.load("models/xgboost.pkl")
     scaler = joblib.load("models/scaler.pkl")
     feature_columns = joblib.load("models/feature_columns.pkl")
     return model, scaler, feature_columns
