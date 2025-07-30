@@ -209,12 +209,27 @@ import pandas as pd
 import joblib
 import numpy as np
 
-# === Load once using Streamlit cache ===
+# # === Load once using Streamlit cache ===
+# @st.cache_resource
+# def load_model():
+#     model = joblib.load("../models/xgboost.pkl")
+#     scaler = joblib.load("../models/scaler.pkl")
+#     features = joblib.load("../models/feature_columns.pkl")
+#     return model, scaler, features
+
+import os
+
+# Use absolute safe path for loading models
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "models", "xgboost.pkl")
+SCALER_PATH = os.path.join(BASE_DIR, "models", "scaler.pkl")
+FEATURES_PATH = os.path.join(BASE_DIR, "models", "feature_columns.pkl")
+
 @st.cache_resource
 def load_model():
-    model = joblib.load("../models/xgboost.pkl")
-    scaler = joblib.load("../models/scaler.pkl")
-    features = joblib.load("../models/feature_columns.pkl")
+    model = joblib.load(MODEL_PATH)
+    scaler = joblib.load(SCALER_PATH)
+    features = joblib.load(FEATURES_PATH)
     return model, scaler, features
 
 model, scaler, feature_columns = load_model()
